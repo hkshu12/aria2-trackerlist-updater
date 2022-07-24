@@ -2,8 +2,8 @@ const JSONRPC_VER = "2.0";
 const METHOD = "aria2.changeGlobalOption";
 
 const defaultOptions = {
-  method: "post",
   host: "localhost",
+  method: "post",
   port: "6800",
   token: undefined,
 };
@@ -31,6 +31,7 @@ try {
   trackers = await fetch(
     "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt"
   ).then((res) => res.text());
+  trackers = trackers.split('\n').filter(tracker => tracker).join(',');
 } catch (e) {
   console.error("获取 tracker list 失败，请检查本地到github的网络连接情况");
   console.error(
