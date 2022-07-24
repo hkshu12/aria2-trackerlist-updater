@@ -1,0 +1,12 @@
+{
+	"name": "aria2-trackerlist-updater",
+	"scripts": {
+		"update": "node ./index.mjs token=jinyao method=get"
+	},
+	"main": "index.mjs",
+	"devDependencies": {
+		"@types/node": "^18.0.6",
+		"eslint": "^8.20.0"
+	},
+	"license": "MIT"
+}
